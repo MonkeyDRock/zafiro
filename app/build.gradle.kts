@@ -29,8 +29,8 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
         ndk {
-            // 真机都是 arm64；x86_64 模拟器在各模块的 debug 构建里追加
-            abiFilters += "arm64-v8a"
+            // 真机支持 arm64 和 armv7；x86_64 模拟器在各模块的 debug 构建里追加
+            abiFilters += listOf("arm64-v8a", "armeabi-v7a")
         }
     }
 
